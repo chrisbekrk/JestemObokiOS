@@ -10,4 +10,7 @@ import UIKit
 
 class Product: NSObject {
 
+    var name = ""
+    var quantity = 0
+    
 }

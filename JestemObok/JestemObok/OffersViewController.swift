@@ -16,6 +16,8 @@ class OffersViewController: UIViewController,LocationServiceDelegate,UITableView
 
     var offersList = [Offer]()
     
+    var selectedOffer = Offer()
+    
     var lastLocation:CLLocation?
     
     override func viewDidLoad() {
@@ -70,6 +72,14 @@ class OffersViewController: UIViewController,LocationServiceDelegate,UITableView
                                 
                                 newOffer.username = offerObject["username"] as! String
                                 newOffer.size = offerObject["size"] as! String
+                                
+                                let productsObjs = offerObject["products"] as! [[String:Any]]
+                                for productsObj in productsObjs{
+                                    let newProduct = Product()
+                                    newProduct.name = productsObj["name"] as! String
+                                    newProduct.quantity = productsObj["quantity"] as! Int
+                                    newOffer.products.append(newProduct)
+                                }
                                 newOfferArray.append(newOffer)
                             }
                             
@@ -134,16 +144,23 @@ class OffersViewController: UIViewController,LocationServiceDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.selectedOffer = self.offersList[indexPath.row]
+    
+        self.performSegue(withIdentifier: "showDeails", sender: self)
+
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let nextVC = segue.destination as? OfferDetailsViewController {
+            nextVC.selectedOffer = self.selectedOffer
+            nextVC.lastLocation = self.lastLocation
+        }
+        
     }
-    */
+ 
 
 }

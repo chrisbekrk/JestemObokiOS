@@ -18,6 +18,7 @@
 		02B190DC1EABA9F900F9229A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DB1EABA9F900F9229A /* LocationManager.swift */; };
 		02B190DE1EABAC8B00F9229A /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DD1EABAC8B00F9229A /* Offer.swift */; };
 		02B190E01EABAEC800F9229A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DF1EABAEC800F9229A /* Product.swift */; };
+		02B190E21EAC0D5700F9229A /* OfferDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190E11EAC0D5700F9229A /* OfferDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		02B190DB1EABA9F900F9229A /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		02B190DD1EABAC8B00F9229A /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		02B190DF1EABAEC800F9229A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		02B190E11EAC0D5700F9229A /* OfferDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				02B190D91EABA79900F9229A /* NewOfferViewController.swift */,
 				02B190DD1EABAC8B00F9229A /* Offer.swift */,
 				02B190DF1EABAEC800F9229A /* Product.swift */,
+				02B190E11EAC0D5700F9229A /* OfferDetailsViewController.swift */,
 			);
 			path = JestemObok;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B190E21EAC0D5700F9229A /* OfferDetailsViewController.swift in Sources */,
 				02B190DE1EABAC8B00F9229A /* Offer.swift in Sources */,
 				02B190E01EABAEC800F9229A /* Product.swift in Sources */,
 				02B190C21EAB9BC700F9229A /* AppDelegate.swift in Sources */,
