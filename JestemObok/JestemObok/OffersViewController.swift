@@ -9,12 +9,14 @@
 import UIKit
 import CoreLocation
 
-class OffersViewController: UIViewController,LocationServiceDelegate {
+class OffersViewController: UIViewController,LocationServiceDelegate,UITableViewDelegate,UITableViewDataSource {
     
     
     @IBOutlet weak var tableView: UITableView!
 
     var offersList = [Offer]()
+    
+    var lastLocation:CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,8 @@ class OffersViewController: UIViewController,LocationServiceDelegate {
     
 
     func tracingLocation(_ currentLocation: CLLocation) {
-        
+        self.lastLocation = currentLocation
+        self.tableView.reloadData()
         
     }
     
@@ -55,23 +58,30 @@ class OffersViewController: UIViewController,LocationServiceDelegate {
                             // let stopsArray = parsedData["stopPoints"] as! [[String:Any]]
                             let object = parsedData as! [[String:Any]]
                             
-                            if object.count == 0{
-                                self?.tableView.isHidden = true
-                            }else{
-                                self?.tableView.isHidden = false
-                            }
-                            let newOfferArray = [Offer]()
+                           
+                            var newOfferArray = [Offer]()
                             for offerObject in object{
                                 let newOffer = Offer()
                                 let location = offerObject["location"] as! [String:Any]
                                 newOffer.address = location["address"] as! String
                                 newOffer.rating = offerObject["rating"] as! Double
-                                newOffer.latitude = location["lat"] as! Double
-                                newOffer.longitude = location["lon"] as! Double
+                                newOffer.latitude = location["lat"] as? Double
+                                newOffer.longitude = location["lon"] as? Double
+                                
+                                newOffer.username = offerObject["username"] as! String
+                                newOffer.size = offerObject["size"] as! String
+                                newOfferArray.append(newOffer)
                             }
                             
+                            if object.count == 0{
+                                self?.tableView.isHidden = true
+                            }else{
+                                self?.tableView.isHidden = false
+                                self?.offersList = newOfferArray
+                                self?.tableView.reloadData()
+                            }
                             //let tramsArray = object["vehicles"] as! [[String:Any]]
-                            print(object)
+                            //print(object)
                             //self?.delegate?.refreshTrams(tramsArray)
                             
                         } catch let error as NSError {
@@ -86,8 +96,46 @@ class OffersViewController: UIViewController,LocationServiceDelegate {
         }
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.offersList.count
+    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "offerCell", for: indexPath)
+        
+        let name = cell.viewWithTag(1) as? UILabel
+        let starLabel = cell.viewWithTag(2) as? UILabel
+        let address = cell.viewWithTag(3) as? UILabel
+        let distance = cell.viewWithTag(4) as? UILabel
+        let shopping = cell.viewWithTag(5) as? UILabel
+
+        let offer = self.offersList[indexPath.row]
+        
+        name?.text = offer.username
+        starLabel?.text = "\(offer.rating)"
+        address?.text = offer.address
+        
+        if let lastloc = self.lastLocation{
+            let firstLoc = CLLocation(latitude: offer.latitude!, longitude: offer.longitude!)
+            let distanceobj = lastloc.distance(from: firstLoc)
+            distance?.text = "\((Int(distanceobj)/10)*10) m"
+
+        }else{
+            distance?.text = "Brak lokalizacji :("
+        }
+        shopping?.text = offer.size
+
+        //cell.textLabel?.text = self.stopObj[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     /*
     // MARK: - Navigation
 
