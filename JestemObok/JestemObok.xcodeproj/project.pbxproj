@@ -14,6 +14,10 @@
 		02B190D41EAB9E8E00F9229A /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190D31EAB9E8E00F9229A /* OffersViewController.swift */; };
 		02B190D61EAB9E9F00F9229A /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190D51EAB9E9F00F9229A /* MyOffersViewController.swift */; };
 		02B190D81EAB9EAD00F9229A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190D71EAB9EAD00F9229A /* MyProfileViewController.swift */; };
+		02B190DA1EABA79900F9229A /* NewOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190D91EABA79900F9229A /* NewOfferViewController.swift */; };
+		02B190DC1EABA9F900F9229A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DB1EABA9F900F9229A /* LocationManager.swift */; };
+		02B190DE1EABAC8B00F9229A /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DD1EABAC8B00F9229A /* Offer.swift */; };
+		02B190E01EABAEC800F9229A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B190DF1EABAEC800F9229A /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		02B190D31EAB9E8E00F9229A /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		02B190D51EAB9E9F00F9229A /* MyOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
 		02B190D71EAB9EAD00F9229A /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		02B190D91EABA79900F9229A /* NewOfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOfferViewController.swift; sourceTree = "<group>"; };
+		02B190DB1EABA9F900F9229A /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		02B190DD1EABAC8B00F9229A /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		02B190DF1EABAEC800F9229A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +71,13 @@
 				02B190C81EAB9BC700F9229A /* Assets.xcassets */,
 				02B190CA1EAB9BC700F9229A /* LaunchScreen.storyboard */,
 				02B190CD1EAB9BC700F9229A /* Info.plist */,
+				02B190DB1EABA9F900F9229A /* LocationManager.swift */,
 				02B190D31EAB9E8E00F9229A /* OffersViewController.swift */,
 				02B190D51EAB9E9F00F9229A /* MyOffersViewController.swift */,
 				02B190D71EAB9EAD00F9229A /* MyProfileViewController.swift */,
+				02B190D91EABA79900F9229A /* NewOfferViewController.swift */,
+				02B190DD1EABAC8B00F9229A /* Offer.swift */,
+				02B190DF1EABAEC800F9229A /* Product.swift */,
 			);
 			path = JestemObok;
 			sourceTree = "<group>";
@@ -143,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B190DE1EABAC8B00F9229A /* Offer.swift in Sources */,
+				02B190E01EABAEC800F9229A /* Product.swift in Sources */,
 				02B190C21EAB9BC700F9229A /* AppDelegate.swift in Sources */,
 				02B190D61EAB9E9F00F9229A /* MyOffersViewController.swift in Sources */,
+				02B190DC1EABA9F900F9229A /* LocationManager.swift in Sources */,
+				02B190DA1EABA79900F9229A /* NewOfferViewController.swift in Sources */,
 				02B190D81EAB9EAD00F9229A /* MyProfileViewController.swift in Sources */,
 				02B190D41EAB9E8E00F9229A /* OffersViewController.swift in Sources */,
 			);

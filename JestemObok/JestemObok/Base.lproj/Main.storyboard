@@ -21,6 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brak zamówień :( " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz0-fV-JmB">
+                                <rect key="frame" x="48" y="289" width="279" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="3Yo-Q4-z2M"/>
+                                    <constraint firstAttribute="width" constant="279" id="YoI-hA-icn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XNa-dF-HSF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -49,23 +59,51 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tuv-OY-UQ7" kind="show" id="sKg-Kd-qZd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pz0-fV-JmB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GeF-Wh-IdE"/>
+                            <constraint firstItem="Pz0-fV-JmB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xlJ-n7-w5c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Oferty" id="Cn5-ta-NUK"/>
+                    <connections>
+                        <outlet property="tableView" destination="XNa-dF-HSF" id="buo-8s-52c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784.8" y="129.98500749625188"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="tXE-yb-Kpz">
+            <objects>
+                <viewController id="Tuv-OY-UQ7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VDf-Tk-Mew"/>
+                        <viewControllerLayoutGuide type="bottom" id="sQw-Lb-s2O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Syj-LI-EaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQP-NP-Wbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3500" y="136.28185907046478"/>
+        </scene>
         <!--Oferty-->
         <scene sceneID="ZkP-Ri-o7x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gmu-IJ-Pgz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Oferty" id="EGS-zT-VT5"/>
+                    <tabBarItem key="tabBarItem" title="Oferty" image="shopping-label" selectedImage="shopping-label" id="EGS-zT-VT5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hhn-Ck-8dW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -80,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1020" y="129.98500749625188"/>
         </scene>
-        <!--View Controller-->
+        <!--Moje zamówienia-->
         <scene sceneID="us7-Dl-TgV">
             <objects>
-                <viewController id="LLi-WP-9PQ" sceneMemberID="viewController">
+                <viewController id="LLi-WP-9PQ" customClass="MyOffersViewController" customModule="JestemObok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M9A-p1-PPW"/>
                         <viewControllerLayoutGuide type="bottom" id="ltg-iL-jGB"/>
@@ -91,13 +129,73 @@
                     <view key="view" contentMode="scaleToFill" id="fBH-Vz-eH3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brak zamówień :( Dodaj swoje pierwsze zamówienie :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2at-m3-b7Z">
+                                <rect key="frame" x="48" y="289" width="279" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="nlD-80-N3a"/>
+                                    <constraint firstAttribute="width" constant="279" id="xSv-vg-pxS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-fb-XbH">
+                                <rect key="frame" x="125" y="386" width="125" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M9B-In-dJw"/>
+                                    <constraint firstAttribute="width" constant="125" id="qXF-5I-Un6"/>
+                                </constraints>
+                                <state key="normal" title="Dodaj zamówienie"/>
+                                <connections>
+                                    <segue destination="XH7-Ib-nFy" kind="presentation" id="4eP-MD-9mL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G2r-fb-XbH" firstAttribute="top" secondItem="2at-m3-b7Z" secondAttribute="bottom" constant="8" id="aHI-xG-fOZ"/>
+                            <constraint firstItem="2at-m3-b7Z" firstAttribute="centerX" secondItem="fBH-Vz-eH3" secondAttribute="centerX" id="buY-72-zQz"/>
+                            <constraint firstItem="2at-m3-b7Z" firstAttribute="centerY" secondItem="fBH-Vz-eH3" secondAttribute="centerY" id="elY-3e-vcp"/>
+                            <constraint firstItem="G2r-fb-XbH" firstAttribute="centerX" secondItem="fBH-Vz-eH3" secondAttribute="centerX" id="h28-He-QsK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pxO-2L-0Yq"/>
+                    <navigationItem key="navigationItem" title="Moje zamówienia" id="pxO-2L-0Yq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xwH-XE-lib">
+                            <connections>
+                                <segue destination="XH7-Ib-nFy" kind="presentation" id="Lsx-Sy-7up"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZv-gl-evF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="785"/>
+            <point key="canvasLocation" x="1784.8" y="784.85757121439292"/>
+        </scene>
+        <!--Nowe zamówienie-->
+        <scene sceneID="tiD-nd-QcY">
+            <objects>
+                <viewController id="Fdi-eC-7RV" customClass="NewOfferViewController" customModule="JestemObok" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rc6-Kg-lv5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jmq-Rp-kq8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l2h-rf-xmb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nowe zamówienie" id="hhl-vX-mRl">
+                        <barButtonItem key="leftBarButtonItem" title="Anuluj" id="1Zh-Si-Iyi">
+                            <connections>
+                                <action selector="dismisButtonClicked:" destination="Fdi-eC-7RV" id="toC-7I-lj6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFx-3r-iTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3466.4000000000001" y="779.46026986506752"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Fae-yX-SfJ">
@@ -122,7 +220,7 @@
         <scene sceneID="J5H-Mf-Mbb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ABu-y7-t9P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Moje zamówienia" id="J1F-PV-fZV"/>
+                    <tabBarItem key="tabBarItem" title="Moje zamówienia" image="shopping-cart" selectedImage="shopping-cart" id="J1F-PV-fZV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GXh-5r-FW4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -137,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1020" y="785"/>
         </scene>
-        <!--View Controller-->
+        <!--Mój profil-->
         <scene sceneID="fbS-RN-gcA">
             <objects>
-                <viewController id="IXW-QB-Lgr" sceneMemberID="viewController">
+                <viewController id="IXW-QB-Lgr" customClass="MyProfileViewController" customModule="JestemObok" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aqr-Cf-qh1"/>
                         <viewControllerLayoutGuide type="bottom" id="Mxe-Sk-YTZ"/>
@@ -148,9 +246,89 @@
                     <view key="view" contentMode="scaleToFill" id="cqv-9b-3NW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-oV-3oH">
+                                <rect key="frame" x="67" y="72" width="240" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Mkb-Dj-i7N"/>
+                                    <constraint firstAttribute="height" constant="202" id="e56-BY-feq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alicja Kowalski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-7G-sul">
+                                <rect key="frame" x="16" y="282" width="343" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Rhz-Cd-j0I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stan konta: 12,50 zł" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygr-mu-gEF">
+                                <rect key="frame" x="16" y="332" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH0-Dg-rRs">
+                                <rect key="frame" x="16" y="361" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iFF-Qg-Hfn"/>
+                                </constraints>
+                                <state key="normal" title="Doładuj konto"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adres dostawy:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdT-kd-BXE">
+                                <rect key="frame" x="16" y="399" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="sPo-LP-8th"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Krakowska 21, Kraków" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn6-zs-pgc">
+                                <rect key="frame" x="16" y="428" width="343" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="r6c-99-1C2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3et-6A-fqR">
+                                <rect key="frame" x="273" y="394" width="86" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="IGp-E7-o5d"/>
+                                    <constraint firstAttribute="height" constant="30" id="ePd-fB-tYS"/>
+                                </constraints>
+                                <state key="normal" title="Zmień adres"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ygr-mu-gEF" secondAttribute="trailing" constant="16" id="1bo-BT-VRq"/>
+                            <constraint firstItem="wdT-kd-BXE" firstAttribute="top" secondItem="DH0-Dg-rRs" secondAttribute="bottom" constant="8" symbolic="YES" id="62I-3u-iMs"/>
+                            <constraint firstItem="Yn6-zs-pgc" firstAttribute="leading" secondItem="cqv-9b-3NW" secondAttribute="leading" constant="16" id="AVf-cN-5W7"/>
+                            <constraint firstItem="Yn6-zs-pgc" firstAttribute="top" secondItem="wdT-kd-BXE" secondAttribute="bottom" constant="8" id="Fzn-d8-Xjm"/>
+                            <constraint firstItem="uZ4-oV-3oH" firstAttribute="top" secondItem="aqr-Cf-qh1" secondAttribute="bottom" constant="8" id="GeC-Ga-WFm"/>
+                            <constraint firstAttribute="trailing" secondItem="wdT-kd-BXE" secondAttribute="trailing" constant="16" id="IaO-QL-JWZ"/>
+                            <constraint firstAttribute="trailing" secondItem="3et-6A-fqR" secondAttribute="trailing" constant="16" id="L5e-hU-PT1"/>
+                            <constraint firstAttribute="trailing" secondItem="DH0-Dg-rRs" secondAttribute="trailing" constant="16" id="LoJ-em-o11"/>
+                            <constraint firstItem="uZ4-oV-3oH" firstAttribute="centerX" secondItem="cqv-9b-3NW" secondAttribute="centerX" id="NLL-bK-vHJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Yn6-zs-pgc" secondAttribute="trailing" constant="16" id="S2Z-kH-jQC"/>
+                            <constraint firstItem="Ygr-mu-gEF" firstAttribute="top" secondItem="SnC-7G-sul" secondAttribute="bottom" constant="8" id="YET-UC-0rR"/>
+                            <constraint firstItem="SnC-7G-sul" firstAttribute="top" secondItem="uZ4-oV-3oH" secondAttribute="bottom" constant="8" id="ahL-9P-T2g"/>
+                            <constraint firstItem="SnC-7G-sul" firstAttribute="leading" secondItem="cqv-9b-3NW" secondAttribute="leading" constant="16" id="ecY-NM-fjL"/>
+                            <constraint firstItem="3et-6A-fqR" firstAttribute="top" secondItem="DH0-Dg-rRs" secondAttribute="bottom" constant="3" id="lGK-zp-8ni"/>
+                            <constraint firstItem="wdT-kd-BXE" firstAttribute="leading" secondItem="cqv-9b-3NW" secondAttribute="leading" constant="16" id="pOl-u0-UKb"/>
+                            <constraint firstItem="DH0-Dg-rRs" firstAttribute="top" secondItem="Ygr-mu-gEF" secondAttribute="bottom" constant="8" id="t6R-Cf-SPz"/>
+                            <constraint firstItem="DH0-Dg-rRs" firstAttribute="leading" secondItem="cqv-9b-3NW" secondAttribute="leading" constant="16" id="tQ2-Lf-5xa"/>
+                            <constraint firstItem="Ygr-mu-gEF" firstAttribute="leading" secondItem="cqv-9b-3NW" secondAttribute="leading" constant="16" id="uqw-fO-Gp0"/>
+                            <constraint firstAttribute="trailing" secondItem="SnC-7G-sul" secondAttribute="trailing" constant="16" id="wPX-Dn-Qab"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uZG-7x-Ygl"/>
+                    <navigationItem key="navigationItem" title="Mój profil" id="uZG-7x-Ygl">
+                        <barButtonItem key="rightBarButtonItem" title="Edytuj" id="ZjP-kK-eLD"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9i-WI-4Us" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,7 +338,7 @@
         <scene sceneID="7HX-0r-laa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tmX-Ns-nZa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mój profil" id="In6-m0-2dA"/>
+                    <tabBarItem key="tabBarItem" title="Mój profil" image="avatar" selectedImage="avatar" id="In6-m0-2dA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="laC-na-Acl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -175,5 +353,32 @@
             </objects>
             <point key="canvasLocation" x="1023.2" y="1442.4287856071965"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fXY-XF-mqz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XH7-Ib-nFy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i15-J6-bDs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fdi-eC-7RV" kind="relationship" relationship="rootViewController" id="Mqd-xs-z2l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRL-bS-bqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2527.1999999999998" y="779.46026986506752"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="5" width="266" height="413"/>
+        <image name="avatar" width="32" height="32"/>
+        <image name="shopping-cart" width="32" height="32"/>
+        <image name="shopping-label" width="32" height="32"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lsx-Sy-7up"/>
+    </inferredMetricsTieBreakers>
 </document>
