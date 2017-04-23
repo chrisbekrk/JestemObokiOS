@@ -61,7 +61,7 @@ class OfferDetailsViewController: UIViewController,UITableViewDataSource,UITable
             }else{
                 distance?.text = "Brak lokalizacji :("
             }
-            shopping?.text = offer.size
+            shopping?.text = "\(offer.size) | Cena: \(offer.price/10) zł"
             
         }else{
             cell = tableView.dequeueReusableCell(withIdentifier: "productCell")

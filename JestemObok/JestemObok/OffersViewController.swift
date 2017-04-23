@@ -69,7 +69,7 @@ class OffersViewController: UIViewController,LocationServiceDelegate,UITableView
                                 newOffer.rating = offerObject["rating"] as! Double
                                 newOffer.latitude = location["lat"] as? Double
                                 newOffer.longitude = location["lon"] as? Double
-                                
+                                newOffer.price = offerObject["price"] as! Int
                                 newOffer.username = offerObject["username"] as! String
                                 newOffer.size = offerObject["size"] as! String
                                 
@@ -83,7 +83,7 @@ class OffersViewController: UIViewController,LocationServiceDelegate,UITableView
                                 newOfferArray.append(newOffer)
                             }
                             
-                            if object.count == 0{
+                            if newOfferArray.count == 0{
                                 self?.tableView.isHidden = true
                             }else{
                                 self?.tableView.isHidden = false
