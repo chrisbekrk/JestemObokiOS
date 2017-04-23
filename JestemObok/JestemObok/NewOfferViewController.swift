@@ -10,6 +10,14 @@ import UIKit
 
 class NewOfferViewController: UIViewController {
 
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func SaveButtonClicked(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true, completion: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
